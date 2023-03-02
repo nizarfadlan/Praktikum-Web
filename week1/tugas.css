@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  font-family: 'Fredoka';
+}
+
+main {
+  font-family: 'Inter';
+  min-height: 100vh;
+}
+
+.hero {
+  background: linear-gradient(252.53deg, rgba(91, 33, 182, 0.5) -0.87%, rgba(179, 33, 182, 0.5) -0.87%, rgba(75, 27, 152, 0.5) 25.15%, rgba(14, 2, 33, 0.245) 97.92%);
+  background: -webkit-linear-gradient(252.53deg, rgba(91, 33, 182, 0.5) -0.87%, rgba(179, 33, 182, 0.5) -0.87%, rgba(75, 27, 152, 0.5) 25.15%, rgba(14, 2, 33, 0.245) 97.92%);
+}
+
+.hero-text-ungu {
+  background: linear-gradient(180deg, #6D28D9 0%, #E127FF 59.9%, #FF2976 100%);
+  background: -webkit-linear-gradient(180deg, #6D28D9 0%, #E127FF 59.9%, #FF2976 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.font-fredoka {
+  font-family: 'Fredoka';
+}
+
+.font-inter {
+  font-family: 'Inter';
+}

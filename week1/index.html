@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Week 1 - Praktikum Web</title>
+  <link rel="stylesheet" href="../style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossOrigin="anonymous" referrerPolicy="no-referrer" />
+</head>
+<body class="flex flex-col h-screen justify-between">
+  <nav class="w-full text-gray-700 transition-all duration-500 ease-out z-50 my-9 bg-white/90 backdrop-filter backdrop-blur rounded-[14px]">
+    <div class="relative flex flex-col mx-16 md:mx-24 px-8 md:items-center md:flex-row">
+      <div class="flex flex-row items-center justify-between p-4 w-full md:w-1/5">
+        <a href="/" class="tracking-wider focus:outline-none focus:shadow-outline text-center">
+          <h2 class="text-3xl font-bold transition-all duration-300 ease-in-out text-[#4F40A0]">
+            PW
+            <p class="text-sm text-stone-600">Week 1</p>
+          </h2>
+        </a>
+        <button id="button-navbar" aria-label="button-navbar" class="md:hidden focus:outline-none focus:shadow-outline transition-all ease-linear">
+          <svg width="35" height="35" viewBox="0 0 100 100">
+            <path class="line line1" fill="none" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058" />
+            <path class="line line2" d="M 20,50 H 80" />
+            <path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942" />
+          </svg>
+        </button>
+      </div>
+      <ul id="navbar-menu" class="hidden md:flex bg-transparent flex-col justify-center py-4 md:pb-5 md:flex md:flex-row md:justify-between w-full">
+        <div class="flex-col text-center md:flex md:flex-row mx-auto">
+          <li class="px-3 md:px-4 lg:px-5 xl:px-6 py-3">
+            <a
+              href="/"
+              class="relative underscore-nav py-2 mt-2 text-normal text-stone-600 md:text-sm md:mt-0 font-medium hover:text-black focus:text-black focus:border-none focus:outline-none focus:shadow-outline"
+            >
+              Home
+            </a>
+          </li>
+        </div>
+        <a
+          href="https://nizarfadlan.dev"
+          target="_black"
+          class="flex justify-center items-center my-auto mt-8 md:mt-auto mx-auto md:mr-0 md:ml-auto w-10/12 md:w-fit max-w-lg bg-stone-700 text-white px-6 py-3 rounded-xl shadow-lg shadow-stone-700/25 text-normal md:text-sm hover:bg-black hover:shadow-black/20 hover:scale-110 transition-all duration-300 ease-in"
+        >
+        <i class="fa-solid fa-up-right-from-square pr-2"></i> Portofolio
+        </a>
+      </ul>
+    </div>
+  </nav>
+  <main class="mx-16 md:mx-24 mt-10 mb-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-6 md:gap-y-7 place-items-center sm:place-items-stretch">
+      <div class="w-full card bg-white rounded-xl transition duration-700 ease-in-out hover:shadow-2xl">
+        <div>
+          <a href="/tugas.html">
+            <div class="relative bg-[#E1DDF8] rounded-t-xl py-8">
+              <div class="flex flex-col items-center justify-center">
+                <img src="https://informatika.akprind.ac.id/wp-content/uploads/2016/12/logo-akprind.png" alt="AKPRIND" class="max-w-[6rem] drop-shadow-xl">
+                <h1 class="font-bold text-2xl mt-4 text-[#4F40A0]">Tugas</h1>
+              </div>
+            </div>
+          </a>
+          <div class="flex flex-col items-start px-5 py-1 pb-5">
+            <a href="/tugas.html">
+              <div class="text-[#4F40A0] hover:text-primary-m font-bold text-xl tracking-tight my-2">
+                Tugas
+              </div>
+            </a>
+            <p class="leading-6 text-sm">Tugas praktikum minggu 1</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="mx-16 md:mx-24 bottom-0 mt-24 mb-10 flex flex-row justify-between">
+    <div class="social-service flex flex-row items-center">
+      <div class="social mr-4 text-2xl">
+        <a href="#" class="mr-2">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="#" class="mr-2">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a href="#" class="mr-2">
+          <i class="fa-brands fa-github"></i>
+        </a>
+        <a href="#" class="mr-2">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>Copyright © 2023</p>
+    </div>
+  </footer>
+</body>
+<script>
+  const navButton = document.querySelector("#button-navbar");
+  const listNav = document.querySelector("#navbar-menu");
+
+  navButton.addEventListener("click", () => {
+    if (navButton.classList.contains("opened")) {
+      navButton.classList.remove("opened");
+      listNav.classList.remove("navbar-open");
+      listNav.classList.toggle("hidden")
+    } else {
+      navButton.classList.toggle("opened");
+      listNav.classList.remove("hidden")
+      listNav.classList.toggle("navbar-open");
+    }
+  });
+</script>
+</html>
