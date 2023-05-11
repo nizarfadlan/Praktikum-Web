@@ -1,7 +1,7 @@
 <?php
 require "koneksi.php";
 
-if ($_GET["nim"]) {
+if ($_SERVER["REQUEST_METHOD"] == "GET" && $_GET["nim"]) {
   $delete = "DELETE FROM mahasiswa WHERE nim=:nim";
   $stmt = $conn->prepare($delete);
   $stmt->bindValue(":nim", $_GET["nim"]);

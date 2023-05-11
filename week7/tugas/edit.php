@@ -1,7 +1,7 @@
 <?php
 require "koneksi.php";
 
-if ($_POST['submit']) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!$_POST['nama'] || !$_GET['nim'] || !$_POST['jenis_kelamin']) {
     $_SESSION["message"] = "Data wajib diisi";
   } else {

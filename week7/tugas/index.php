@@ -3,7 +3,7 @@ require "koneksi.php";
 
 $result = $conn->query("SELECT * FROM mahasiswa")->fetchAll();
 
-if ($_POST["submit"]) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (!$_POST["nama"] || !$_POST["nim"] || !$_POST["jenis_kelamin"]) {
     $_SESSION["message"] = "Data wajib diisi";
   } else {
