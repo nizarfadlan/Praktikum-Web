@@ -39,7 +39,6 @@ if(isset($_SESSION["message"])) {
     <div style="margin-top: 10px;">
       <label>Jenis Kelamin</label>
       <label for="Laki">
-        <?= $result->jenis_kelamin ?>
         <input type="radio" name="jenis_kelamin" value="L" <?= $result->jenis_kelamin == "L" ? "checked" : "" ?>> Laki-Laki
       </label>
       <label for="Perempuan">
