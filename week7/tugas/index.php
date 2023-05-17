@@ -3,21 +3,6 @@ require "koneksi.php";
 
 $result = $conn->query("SELECT * FROM mahasiswa")->fetchAll();
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (!$_POST["nama"] || !$_POST["nim"] || !$_POST["jenis_kelamin"]) {
-    $_SESSION["message"] = "Data wajib diisi";
-  } else {
-    $create = "INSERT INTO mahasiswa (nim, nama, jenis_kelamin) VALUES (:nim, :nama, :jenis_kelamin)";
-    $stmt = $conn->prepare($create);
-    $stmt->bindValue(":nim", $_POST["nim"]);
-    $stmt->bindValue(":nama", $_POST["nama"]);
-    $stmt->bindValue(":jenis_kelamin", $_POST["jenis_kelamin"]);
-    $save = $stmt->execute();
-
-    $_SESSION["message"] = "Data berhasil disimpan";
-  }
-}
-
 if(isset($_SESSION["message"])) {
   $message = $_SESSION["message"];
   unset($_SESSION["message"]);
@@ -62,6 +47,7 @@ if(isset($_SESSION["message"])) {
       </tr>
     </thead>
     <tbody>
+
       <?php foreach ($result as $key => $value) { ?>
         <tr>
           <td><?= $key+1 ?></td>
@@ -73,14 +59,14 @@ if(isset($_SESSION["message"])) {
             <a href="edit.php?nim=<?= $value->nim ?>">Edit</a>
           </td>
           <td>
-            <a href="hapus.php?nim=<?= $value->nim ?>">Hapus</a>
+            <a href="proses_hapus.php?nim=<?= $value->nim ?>">Hapus</a>
           </td>
         </tr>
       <?php } ?>
     </tbody>
   </table>
   <h1>Input data</h1>
-  <form method="post">
+  <form method="post" action="proses_create.php">
     <div style="margin-top: 10px;">
       <label>NIM</label>
       <input type="text" name="nim" maxlength="9">
@@ -91,7 +77,12 @@ if(isset($_SESSION["message"])) {
     </div>
     <div style="margin-top: 10px;">
       <label>Jenis Kelamin</label>
-      <input type="text" name="jenis_kelamin" maxlength="1">
+      <label for="Laki">
+        <input type="radio" name="jenis_kelamin" value="L"> Laki-Laki
+      </label>
+      <label for="Perempuan">
+        <input type="radio" name="jenis_kelamin" value="P"> Perempuah
+      </label>
     </div>
     <div style="margin-top: 10px;">
       <input type="submit" name="submit" value="Submit">

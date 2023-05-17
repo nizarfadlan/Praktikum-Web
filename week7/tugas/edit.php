@@ -1,24 +1,6 @@
 <?php
 require "koneksi.php";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (!$_POST['nama'] || !$_GET['nim'] || !$_POST['jenis_kelamin']) {
-    $_SESSION["message"] = "Data wajib diisi";
-  } else {
-    $update = "UPDATE mahasiswa SET nama=:nama, jenis_kelamin=:jenis_kelamin WHERE nim=:nim";
-    $stmt = $conn->prepare($update);
-    $stmt->bindValue(":nama", $_POST["nama"]);
-    $stmt->bindValue(":jenis_kelamin", $_POST["jenis_kelamin"]);
-    $stmt->bindValue(":nim", $_GET["nim"]);
-    if ($stmt->execute()) {
-      $_SESSION["message"] = "Data berhasil diedit";
-    } else {
-      $_SESSION["message"] = "Data gagal diedit";
-    }
-    header("Location: index.php");
-  }
-}
-
 if(isset($_SESSION["message"])) {
   $message = $_SESSION["message"];
   unset($_SESSION["message"]);
@@ -48,14 +30,21 @@ if(isset($_SESSION["message"])) {
     }
 ?>
   <h1>Edit data</h1>
-  <form method="post">
+  <form method="post" action="proses_edit.php">
+    <input name="nim" hidden value="<?= $_GET['nim']?>">
     <div style="margin-top: 10px;">
       <label>Nama</label>
       <input type="text" name="nama" maxlength="50" value="<?= $result->nama ?>">
     </div>
     <div style="margin-top: 10px;">
       <label>Jenis Kelamin</label>
-      <input type="text" name="jenis_kelamin" maxlength="1" value="<?= $result->jenis_kelamin ?>">
+      <label for="Laki">
+        <?= $result->jenis_kelamin ?>
+        <input type="radio" name="jenis_kelamin" value="L" <?= $result->jenis_kelamin == "L" ? "checked" : "" ?>> Laki-Laki
+      </label>
+      <label for="Perempuan">
+        <input type="radio" name="jenis_kelamin" value="P" <?= $result->jenis_kelamin == "P" ? "checked" : "" ?>> Perempuan
+      </label>
     </div>
     <div style="margin-top: 10px;">
       <input type="submit" name="submit" value="Submit">
